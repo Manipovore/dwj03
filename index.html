@@ -1,0 +1,95 @@
+<!DOCTYPE>
+<html lang="fr">
+    <head>
+        <title>Paris Vélib</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Paris Vélib</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#slide">Tutoriel <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#api">Réservez un vélo</a></li>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> + <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Info Paris</a></li>
+                            <li><a href="#">Renseignements</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Aide</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Nous soutenir</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <h1 id="title_api" style="text-align: center;">Velib Paris: comment réserver un vélo sur Paris ?</h1>
+        <hr>
+
+        <!------------------- SLIDE ------------------------>
+        <div id="containeur_slide"></div>
+        <hr>
+
+        <h2 style="text-align: center;">Réservez votre vélo ici</h2>
+
+        <section id="api" class="jumbotron">
+            <div id="container_app">
+                <div id="map"></div>
+                <div id="support_data">
+                    <div id="info"><h3>Choisissez une station et réservez un vélo !!!</h3></div>
+                    <div id="support_canvas">
+                        <span id="sign_canvas" class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        <canvas id="canvas"></canvas>
+                        <div class="btn-canvas">
+                            <button id="valid_sign" class="btn btn-primary" onclick="validSign();" type="submit">Valider</button>
+                            <button id="remove_sign" class="btn btn-primary" onclick="clearCanvas();" type="button">Effacer</button>
+                            <button id="annul_sign" class="btn btn-primary" onclick="clearAndHide();" type="button">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="reserve">
+            <div id="content_book">
+                <p> La réservation est éffective pour <span id="timer"></span>. 
+                    Vous pouvez toutefois annuler directement en cliquant sur le boutton suivant
+                    <button class="btn btn-default" onclick="stopTime()">Annuler la réservation</button>
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Copyright Benjamin Oliveira 2017</p>
+        </footer>
+        
+        <!---------------------- Script JAVASCRIPT ---------------------->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/index.js" ></script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaVjb72acG6c8jymNm-A0k67oxcciQqOk&callback=initMap"></script>
+    </body>
+</html>

@@ -1,0 +1,327 @@
+body {
+  
+}
+
+h1{
+    text-shadow: -1px -2px 12px rgba(0, 0, 0, 1);
+}
+
+h2{
+    text-shadow: -1px -2px 12px rgba(0, 0, 0, 1);
+    font-size: 4rem;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+
+/**********************************
+*********  SLIDER  ****************
+***********************************/
+
+#containeur_slide{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #2d2d2d;
+    perspective: 800px;
+    perspective-origin: center center;
+    box-shadow: inset 0px -5px 10px 1px #888888;
+}
+
+#slide{
+    position: relative;
+    width: 85%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_slide{
+    width: 5%;
+    height: 80%;
+    margin: 10px;
+    background-color: #fff;
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: 1s; /* Safari */
+    transition: 1s;
+}
+
+.img_active{
+    margin: 20px;
+    width: 65%;
+    height: 90%;
+    -webkit-transition: 1s; /* Safari */
+    transition: 1s;
+    transform: rotateY(0) !important;
+}
+
+#ctrl_slide{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#prev_slide,
+#next_slide{
+    width: 8%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    -webkit-transition: 1s; /* Safari */
+    transition: 1s;
+}
+
+#prev_slide{
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+}
+
+#next_slide{
+    right: 0;
+    background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 99%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 99%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 99%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
+}
+
+#prev_slide:hover,
+#next_slide:hover{
+    -webkit-transition: 1s; /* Safari */
+    transition: 1s;
+    opacity: 0.5;
+}
+
+#prev_slide span,
+#next_slide span{
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+}
+
+#next_slide span{
+    right: 0;
+}
+
+#select_slide{
+    width: 100%;
+    height: 20px;
+    border-top: 1px solid #656565;
+    background: #626363;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 6px 6px 3px #b3b3b3;
+}
+
+.bulle{
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border: 1px solid #444444;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.bulleActive{
+    background: #444444;
+}
+
+@media screen and (max-width: 768px){
+    #title_api{
+        font-size: 2rem;
+    }
+
+    .img_slide{
+        width: 0;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        border: 0;
+        visibility: hidden;
+        -webkit-transition: opacity 600ms, visibility 600ms;
+        transition: opacity 600ms, visibility 600ms;
+    }
+
+    .img_active{
+        visibility: visible;
+        opacity: 1;
+        width: 100%;
+    }
+    #ctrl_slide{
+        display: none;
+    }
+
+    #slide{
+        width: 95%;
+    }
+} 
+
+/**********************************
+*********  API  *******************
+***********************************/
+
+#api{
+    background: #222222;
+    margin-top: 35px;
+}
+
+#container_app{
+    height: 90%;
+    margin: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#map{
+    height: 100%;
+    width: 60%;
+    border: 5px solid #4e4e4e;
+    border-radius: 10px;
+}
+
+#support_data{
+    background: #1d1d1d;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    width: 39%;
+}      
+
+#info{
+    padding: 1%;
+    width: 100%;
+    height: 100%;
+}
+
+#info div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#info h4{
+  font-size: 3rem;
+  color: #849bda;
+}
+
+#info p{
+    color: aliceblue;
+}
+
+#bike{
+    color: #924040 !important;
+}
+
+@media screen and (max-width: 980px){
+
+}
+
+@media screen and (max-width: 980px) {
+  #container_app{
+        flex-direction: column;
+    }
+    #map{
+        width: 100%;
+    }
+    #support_data {
+        width: 100%;
+        height: 390px;
+    }
+}
+
+
+/**********************************
+*********  CANVAS  ****************
+***********************************/
+
+#support_canvas{
+    display:none;
+    border: 1px solid #ffffff;
+    width: 284px;
+    height: 300px;
+    border: 1px solid #9c9c9c;
+    z-index: 10;
+}
+
+#sign_canvas{
+    background: white;
+    padding: 3px;
+}
+
+#canvas{
+    width: 282px;
+    background: white;
+    border-bottom: 1px solid #868484;
+}
+
+.btn-canvas{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#valid_sign{
+    
+}
+
+#annul_sign{
+    
+}
+
+/**********************************
+*********  Barre reserve  *********
+***********************************/
+#reserve{
+    display: none;
+    background: #222222;
+    padding: 11px 0 1px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 52px;
+    z-index: 9999;
+}
+
+#content_book{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #9fa1a2;
+}
+
+
+
+
+/**********************************
+*********  FOOTER  ****************
+***********************************/
+
+footer{
+    background: #b6bdbd;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p{
+    text-align: center;
+    margin: 0;
+    color: #848586;
+}
