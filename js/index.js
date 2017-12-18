@@ -9,7 +9,7 @@ include('slider/Diapo');
 
 //SCRIPT MARKER MAP
 include('api/Model/marker_Model');
-include('api/Controller/marker_controller');
+include('api/Controller/marker_Controller');
 include('api/View/marker_view');
 
 //SCRIPT BOOK

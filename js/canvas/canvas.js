@@ -8,11 +8,20 @@ var clickDrag = new Array();
 var paint;
 var id;
 
+// test
+$('#canvas').on( "touchmove",function(e){
+  //console.log("okokokok");
+});
+
 $('#canvas').on( "mousedown touchstart",function(e){
   var mouseX = e.pageX - this.offsetLeft;
   var mouseY = e.pageY - this.offsetTop;
 
-  console.log("paint");
+  if(e.type == 'touchstart'){
+    var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+    mouseX = touch.pageX - this.offsetLeft;
+    mouseY = touch.pageY  - this.offsetTop;
+  }
 		
   paint = true;
   addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
@@ -21,8 +30,14 @@ $('#canvas').on( "mousedown touchstart",function(e){
 
 $('#canvas').on( "mousemove touchmove", function(e){
   if(paint){
-    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
-    redraw();
+    if(e.type == 'touchmove'){
+      var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+      addClick(touch.pageX - this.offsetLeft, touch.pageY - this.offsetTop, true);
+      redraw();
+    }else{
+      addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+      redraw();
+    }
   }
 });
 
@@ -35,6 +50,7 @@ function addClick(x, y, dragging ){
   clickX.push(x);
   clickY.push(y);
   clickDrag.push(dragging);
+  //console.log("add click: x-> " + clickX + " y-> " + clickY + " clickDrag -> " + clickDrag);
 }
 
 function redraw(){

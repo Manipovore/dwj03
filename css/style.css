@@ -227,20 +227,26 @@ h2{
     color: #924040 !important;
 }
 
-@media screen and (max-width: 980px){
-
-}
-
 @media screen and (max-width: 980px) {
   #container_app{
         flex-direction: column;
+        height: 180%;
+        min-height: 640px;
     }
     #map{
         width: 100%;
+        height: 90%;
     }
     #support_data {
         width: 100%;
-        height: 390px;
+        height: 90%;
+    }
+    #reserve {
+        height: 120px;
+    }
+
+    #reserve p{
+        text-align: center;
     }
 }
 
